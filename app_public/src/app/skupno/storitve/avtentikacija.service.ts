@@ -63,10 +63,6 @@ export class AvtentikacijaService {
   }
 
   public odjava(): void {
-    const zeton: string = this.vrniZeton();
-    const koristnaVsebina = JSON.parse(this.b64Utf8(zeton.split('.')[1]));
-    const { elektronskiNaslov, ime } = JSON.parse(this.b64Utf8(zeton.split('.')[1]));
-
     this.edugeocachePodatkiStoritev.crniSeznam().subscribe(
       result => {
         this.shramba.removeItem('edugeocache-zeton')
